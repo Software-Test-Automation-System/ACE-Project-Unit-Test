@@ -1,0 +1,26 @@
+networks:
+  mynetwork: 
+    driver: bridge
+services:
+    mysql:
+        image: mysql:latest
+        container_name: mysql-container
+        environment:
+          MYSQL_ROOT_PASSWORD: 123456
+          MYSQL_DATABASE: project
+        ports:
+          - "3306:3306"
+        volumes:
+          - ./mysql:/var/lib/mysql
+        networks:
+          - mynetwork
+
+    generator-service:
+        build: ./FlaskAPI
+        container_name: generatorservice
+        ports:
+        - "5070:5000"
+        networks:
+          - mynetwork
+        
+    
