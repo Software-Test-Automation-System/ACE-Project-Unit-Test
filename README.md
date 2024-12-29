@@ -20,7 +20,7 @@ Le dépôt est organisé en plusieurs répertoires comme suit :
 
 ### 4. **UnitTest**
 - Interface utilisateur pour tester et vérifier les tests unitaires générés.
-- Contient la logique front-end pour interagir avec FlaskAPI.
+- Contient la logique back-end pour interagir avec FlaskAPI.
 
 ### 5. **UserAuth-BackEnd**
 - Microservice backend pour la gestion de l'authentification et de l'autorisation des utilisateurs.
