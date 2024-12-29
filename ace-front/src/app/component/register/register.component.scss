@@ -1,0 +1,25 @@
+/* Centrage de l'élément Register */
+.authentication-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Taille de la carte de connexion (login) */
+.card {
+    width: 400px; /* Largeur */
+    height: 550px; /* Hauteur */
+    padding: 20px; /* Espacement interne */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optionnel : ombre pour style */
+    border-radius: 10px; /* Optionnel : coins arrondis */
+}
+.avatar {
+    position: relative;
+    cursor: pointer;
+  
+    img {
+      border-radius: 50%;
+    }
+  }
+  

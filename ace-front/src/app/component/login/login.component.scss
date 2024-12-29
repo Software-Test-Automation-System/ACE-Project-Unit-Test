@@ -1,0 +1,16 @@
+/* Centrage global de l'élément Login */
+.authentication-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Remplit toute la hauteur de la fenêtre */
+}
+
+/* Taille de la carte Login */
+.card {
+    width: 400px; /* Largeur */
+    height: 500px; /* Hauteur */
+    padding: 20px; /* Espacement interne */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optionnel : ombre pour style */
+    border-radius: 10px; /* Optionnel : coins arrondis */
+}

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="left-section">
+    <h2>Clone Java Project</h2>
+    <form (ngSubmit)="onSubmit()">
+      <textarea [(ngModel)]="javaClass" name="javaClass" placeholder="Put the repository git url here..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- File Explorer -->
+    <div class="file-explorer" *ngIf="fileStructure && fileStructure.length > 0">
+      <h3>Project Structure</h3>
+      <div class="file-tree">
+        <ng-container *ngFor="let item of fileStructure">
+          <div class="tree-item">
+            <!-- Node itself -->
+            <div class="node" [class.folder]="item.type === 'DIRECTORY'" [class.file]="item.type === 'FILE'"
+                 (click)="toggleFolder(item)">
+              <span class="node-content">
+                <i class="bx" [ngClass]="{'bx-folder': item.type === 'DIRECTORY', 'bx-file': item.type === 'FILE'}"></i>
+                {{ item.name }}
+              </span>
+            </div>
+            <!-- Children -->
+            <div class="children" *ngIf="item.children && item.expanded">
+              <app-file-node *ngFor="let child of item.children" [node]="child" (onSelect)="toggleFolder($event)">
+              </app-file-node>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <!-- File Content Section -->
+  <div class="right-section" *ngIf="selectedFileContent">
+    <div class="file-header">
+      <h3>{{ selectedFileName }}</h3>
+    </div>
+    <pre class="file-content">{{ selectedFileContent }}</pre>
+  </div>
+</div>
