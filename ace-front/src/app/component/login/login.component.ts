@@ -30,13 +30,13 @@ export class LoginComponent {
     }else{
       console.log('Form is invalid');
     }
- /*   const formValues = this.loginForm.value;
+  const formValues = this.loginForm.value;
     const email = formValues.email;
     const password = formValues.password;
     
     const queryParams = `?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
-*/
-/*    this.loginService.authenticationService(queryParams).subscribe({
+
+   this.loginService.authenticationService(queryParams).subscribe({
       next: (response) => {
         console.log('authentication response',response);
     localStorage.setItem("token", response.accessToken);
@@ -45,7 +45,7 @@ export class LoginComponent {
 
     console.log('User ID, Access Token, and Refresh Token saved to localStorage.');
       }
-    }); */
+    }); 
 
   }
   
