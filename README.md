@@ -19,7 +19,7 @@ Le dépôt est organisé en plusieurs répertoires comme suit :
 - Gère l'authentification, l'autorisation et la transmission des requêtes.
 
 ### 4. **UnitTest**
-- Interface utilisateur pour tester et vérifier les tests unitaires générés.
+- Interface utilisateur pour scanner les fichiers java et générer les tests unitaires.
 - Contient la logique back-end pour interagir avec FlaskAPI.
 
 ### 5. **UserAuth-BackEnd**
