@@ -27,8 +27,8 @@ Le dépôt est organisé en plusieurs répertoires comme suit :
 - Assure un accès sécurisé au système.
 
 ### 6. **ace-front**
-- Interface principale du projet.
-- Développée avec des technologies modernes pour offrir une expérience utilisateur intuitive.
+- Application frontEnd du projet.
+- Développée avec Angular pour offrir une expérience utilisateur intuitive.
 
 ## Prérequis
 
