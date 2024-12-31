@@ -1,0 +1,33 @@
+# Stage 1: Build
+FROM openjdk:21-jdk-slim as builder
+
+WORKDIR /app
+
+# Copy Maven wrapper files
+COPY .mvn/ .mvn/
+COPY mvnw ./mvnw
+COPY pom.xml ./pom.xml
+
+# Make Maven wrapper executable
+RUN chmod +x ./mvnw
+
+# Copy source code
+COPY src ./src
+
+# Build the application (skip tests)
+RUN ./mvnw clean install -DskipTests
+RUN ./mvnw package -DskipTests
+
+# Stage 2: Runtime
+FROM openjdk:21-jdk-slim
+
+WORKDIR /app
+
+# Copy the built JAR file from the builder stage
+COPY --from=builder /app/target/*.jar /app/app.jar
+
+# Expose application port
+EXPOSE 8083
+
+# Run the application
+CMD ["java", "-jar", "/app/app.jar"]
